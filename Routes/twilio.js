@@ -17,8 +17,7 @@ router.post('/twilio', async (req, res) => {
         console.log(ans.data);
         twiml.message(ans.data);
 
-        res.type('text/xml');
-        res.status(200).send(twiml.toString());
+        res.type('text/xml').send(twiml.toString());
 
     } catch (error) {
         console.error("Error generating AI content:", error);
